@@ -1,1 +1,1 @@
-# SMSOTP-Rest-API
+# SMSOTP-Rest-APIS for WSO2 Identity Server
