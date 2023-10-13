@@ -1,4 +1,4 @@
-package com.wso2.identity.oauth.grant.smsotp;
+package org.wso2.identity.oauth.grant.smsotp;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -14,14 +14,10 @@ import org.wso2.carbon.identity.smsotp.common.SMSOTPService;
 import org.wso2.carbon.identity.smsotp.common.dto.ValidationResponseDTO;
 import org.wso2.carbon.identity.smsotp.common.exception.SMSOTPException;
 import org.wso2.carbon.user.core.UserCoreConstants;
-import org.wso2.carbon.user.core.UserStoreException;
 import org.wso2.carbon.user.core.common.AbstractUserStoreManager;
 import org.wso2.carbon.user.core.common.User;
 import org.wso2.carbon.user.core.constants.UserCoreErrorConstants;
 import org.wso2.carbon.user.core.service.RealmService;
-import org.wso2.carbon.user.core.util.UserCoreUtil;
-
-import static com.wso2.identity.oauth.grant.smsotp.SMSOTPGrantConstants.*;
 
 /**
  * New grant type for Identity Server
@@ -47,15 +43,15 @@ public class SMSOTPGrantHandler extends AbstractAuthorizationGrantHandler  {
 
         // extract parameters
         for(RequestParameter parameter : parameters){
-            if(GRANT_PARAM_USERID.equals(parameter.getKey())){
+            if(SMSOTPGrantConstants.GRANT_PARAM_USERID.equals(parameter.getKey())){
                 if(parameter.getValue() != null && parameter.getValue().length > 0){
                     userId = parameter.getValue()[0];
                 }
-            } else if (GRANT_PARAM_TRANSACTION_ID.equals(parameter.getKey())){
+            } else if (SMSOTPGrantConstants.GRANT_PARAM_TRANSACTION_ID.equals(parameter.getKey())){
                 if(parameter.getValue() != null && parameter.getValue().length > 0){
                     transactionId = parameter.getValue()[0];
                 }
-            } else if (GRANT_PARAM_OTP.equals(parameter.getKey())) {
+            } else if (SMSOTPGrantConstants.GRANT_PARAM_OTP.equals(parameter.getKey())) {
                 if (parameter.getValue() != null && parameter.getValue().length > 0) {
                     smsotp = parameter.getValue()[0];
                 }

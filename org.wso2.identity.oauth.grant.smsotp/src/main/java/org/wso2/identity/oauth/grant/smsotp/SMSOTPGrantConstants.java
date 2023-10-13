@@ -1,4 +1,4 @@
-package com.wso2.identity.oauth.grant.smsotp;
+package org.wso2.identity.oauth.grant.smsotp;
 
 /**
  * Constants used in WSO2 SMSOTP Grant Type.

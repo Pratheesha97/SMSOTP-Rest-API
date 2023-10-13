@@ -1,8 +1,7 @@
-package com.wso2.identity.oauth.grant.smsotp;
+package org.wso2.identity.oauth.grant.smsotp;
 
 import org.apache.oltu.oauth2.common.OAuth;
 import org.apache.oltu.oauth2.common.validators.AbstractValidator;
-import com.wso2.identity.oauth.grant.smsotp.SMSOTPGrantConstants;
 
 import javax.servlet.http.HttpServletRequest;
 
